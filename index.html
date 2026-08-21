@@ -144,30 +144,29 @@ KABIR <span class="dubai-glow">DIWAN™️</span>
     </div>
     <script>
     const countdownElement = document.getElementById('countdown');
+    let countdownTimer;
 
-    // Check if user has already been redirected in this session
-    if (sessionStorage.getItem('redirected') === 'true') {
-        countdownElement.textContent = '';
-    } else {
+    function startRedirect() {
+        clearInterval(countdownTimer);
+
         let timeLeft = 5;
         countdownElement.textContent = timeLeft;
 
-        const countdownTimer = setInterval(() => {
+        countdownTimer = setInterval(() => {
             timeLeft--;
 
             if (timeLeft <= 0) {
                 clearInterval(countdownTimer);
-
-                // Remember that redirect has happened
-                sessionStorage.setItem('redirected', 'true');
-
-                window.location.href = "https://t.me/+IVB3mHbq9M5jOTVk";
+                window.location.href = "https://t.me/+ANIVKDsdC6ExMmU1";
             } else {
                 countdownElement.textContent = timeLeft;
             }
         }, 1000);
     }
-</script>
-    
 
+    // Every time the page becomes visible, start again from 5
+    window.addEventListener('pageshow', function () {
+        startRedirect();
+    });
+</script>
 </html>
