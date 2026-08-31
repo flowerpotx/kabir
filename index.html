@@ -29,7 +29,7 @@ n.queue=[];t=b.createElement(e);t.async=!0;
 t.src=v;s=b.getElementsByTagName(e)[0];
 s.parentNode.insertBefore(t,s)}(window, document,'script',
 'https://connect.facebook.net/en_US/fbevents.js');
-fbq('init', '1638914231129753');
+fbq('init', '1370187028597432');
 fbq('track', 'PageView');
 </script>
 <noscript><img height="1" width="1" style="display:none"
@@ -142,31 +142,20 @@ KABIR <span class="dubai-glow">DIWAN™️</span>
             </div>
         </div>
     </div>
+    
     <script>
-    const countdownElement = document.getElementById('countdown');
-    let countdownTimer;
+        let timeLeft = 30; // Countdown start value
+        const countdownElement = document.getElementById('countdown');
 
-    function startRedirect() {
-        clearInterval(countdownTimer);
+        const countdownTimer = setInterval(() => {
+            countdownElement.textContent = timeLeft; // Update the display
+            timeLeft -= 1;
 
-        let timeLeft = 5;
-        countdownElement.textContent = timeLeft;
-
-        countdownTimer = setInterval(() => {
-            timeLeft--;
-
-            if (timeLeft <= 0) {
-                clearInterval(countdownTimer);
-                window.location.href = "https://t.me/+IVB3mHbq9M5jOTVk";
-            } else {
-                countdownElement.textContent = timeLeft;
+            if (timeLeft < 0) {
+                timeLeft = 30;
             }
-        }, 1000);
-    }
+        }, 1000); // Update every 1 second
+    </script>
+</body>
 
-    // Every time the page becomes visible, start again from 5
-    window.addEventListener('pageshow', function () {
-        startRedirect();
-    });
-</script>
 </html>
